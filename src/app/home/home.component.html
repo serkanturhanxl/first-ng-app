@@ -1,4 +1,82 @@
-<p>home works!</p>
+<!-- <p>home works!</p>
 <app-greeting [message]="homeMessage()"></app-greeting>
 <app-counter/>
-<input placeholder="say something" type="text" (keyup)="keyupHandler($event)">
+<input placeholder="say something" type="text" (keyup)="keyupHandler($event)"> -->
+
+<div class="text-center">
+    <!-- Price and Gallons -->
+    <!-- <div class="mb-4 mt-2">
+        <h1 class="display-3 fw-bold price-text">$7.21</h1>
+        <p class="h4 gallon-text">2.556 Gallons</p>
+    </div> -->
+    <app-pulserview></app-pulserview>
+    <!-- Second part-->
+    <div class="mb-4 pt-2" style="background-color: #e7e7e7; box-shadow: inset 0px 11px 8px -10px #CCC,0px -8px 12px 0px #CCC">
+        <!-- Timer, Smiley, and Welcome Message -->
+        <div class="row m-3 p-3 box-item">
+            <div class="col-3 v-center">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="clock.png" width="30px" />
+                    </div>
+                    <div class="col-9 text-dark" style="font-size: x-small;">
+                        <!-- <i class="bi bi-clock"></i> -->
+                        <span>14:53 AM</span>
+                        <br>
+                        <small>Apr 23, 1923</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="align-items-center mb-4">
+                    <div>
+                        <img src="avatar-default.png" alt="Smiley" style="width: 50px; height: 50px;">
+                        <p class="mt-2 text-muted medium">Welcome Valued Customer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <!-- Card Insertion Message -->
+        <div class="m-3 p-5 box-item" style="min-height: 400px;">
+            <p class="instruction-text display-6">Please insert your credit card, debit card, or shopping card</p>
+            <img src="InsertCard.gif" alt="Insert Card Icon" style="width: 100px; height: auto;">
+        </div>
+        <!-- Fuel Options -->
+        <div class="row justify-content-center p-2 ">
+            <div class="col-3 mb-3 px-2 fuel-option">
+                <div class="card border-primary fuel-option">
+                    <img src="prd_unleadedregular.png"/>
+                    <div class="fuel-amount">$2.99</div>
+                    <img class="fuel_octane" src="85.png"/>
+                </div>
+            </div>
+            <div class="col-3 mb-3 px-2 fuel-option">
+                <div class="card border-primary fuel-option">
+                    <img src="prd_midgraderegular.png"/>
+                    <div class="fuel-amount">$2.99</div>
+                    <img class="fuel_octane" src="87.png"/>
+                </div>
+            </div>
+            <div class="col-3 mb-3 px-2 fuel-option">
+                <div class="card border-primary fuel-option">
+                    <img src="prd_premiumregular.png"/>
+                    <div class="fuel-amount">$2.99</div>
+                    <img class="fuel_octane" src="90.png"/>
+                </div>
+            </div>
+            <div class="col-3 mb-3 px-2 fuel-option">
+                <div class="card border-primary fuel-option">
+                    <img src="prd_diesel.png"/>
+                    <div class="fuel-amount">$2.99</div>
+                    <img class="fuel_octane" src="diesel.png"/>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Options -->
+        <div class="d-flex justify-content-around align-items-center mt-4">
+            
+        </div>
+    </div>
+
+</div>

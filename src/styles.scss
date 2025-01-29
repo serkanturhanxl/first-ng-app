@@ -1,8 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-html, body{
+html,
+body,
+main,
+.reset-style {
     margin: 0;
     padding: 0;
 }
- *{
+
+* {
     outline: none;
+}
+
+.box-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:
+        inset 0px 0px 0px 0px #CCC,
+        inset 0px 0px 10px 2px #CCC
+}
+.v-center {
+    display: flex;
+    align-items: center;
  }
+

@@ -6,15 +6,13 @@ import { HeaderComponent } from './components/header/header.component';
   selector: 'app-root',
   imports: [RouterOutlet,HeaderComponent],
   template: `
-    <app-header/>
+    <!-- <app-header/> -->
     <main>
       <router-outlet/>
     </main>
   `,
   styles: [`
-    main{
-     padding: 16px;
-    }
+    
     `],
 })
 export class AppComponent {
