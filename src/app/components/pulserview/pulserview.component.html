@@ -6,8 +6,19 @@
     <button (click)="stopPump()">Stop Pump</button>
 </div> -->
 
+ <!-- This is for visualize the app. Its internal component. Tomake it work click the amount on the website -->
  <!-- Price and Gallons -->
  <div class="mb-5 mt-4">
     <h1 class="display-1 fw-bold price-text" (click)="startStopPump()">${{amountValue()}}</h1>
     <p class="display-1 gallon-text">{{gallonValue()}} Gallons</p>
 </div>
+
+<!-- This is the DisplayApp project to show. -->
+<!-- <div class="mb-5 mt-4" style="height: 450px;">
+  <iframe src="https://127.0.0.1:5002/#/?key=cKIyqTNTbnWIfSTuSLh%2B6sEgXtbxtXPOw36xoPISahdsJ21A%2FaLTBOtg&source=electron-app" height="100%" width="100%"></iframe>
+</div> -->
+
+<!-- This is the Seperate project for the PulserView. -->
+<!-- <div class="mb-5 mt-4" style="height: 450px;">
+  <iframe src="http://localhost:56799/" height="100%" width="100%"></iframe>
+</div> -->

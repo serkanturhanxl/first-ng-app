@@ -15,6 +15,7 @@ export class PulserviewComponent implements OnInit {
   amountValue = signal("0")
   gallonValue = signal("0")
   startStopService = signal(false)
+https: any;
   setPulser(amount: string, gallon: string) {
     this.amountValue.set(amount);
     this.gallonValue.set(gallon);
