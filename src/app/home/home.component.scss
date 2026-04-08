@@ -53,3 +53,178 @@
     height: 100px;
     background-color: gray;
 }
+
+
+/* The "Combined" Corner Button */
+/* Corner Button */
+.modern-corner-btn {
+    position: absolute;
+    top: 0; right: 0;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* PIN Display (The dots) */
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    background: #f1f3f5;
+    border-radius: 12px;
+}
+
+.dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2px solid #adb5bd;
+}
+
+.dot.active {
+    background: #212529;
+    border-color: #212529;
+}
+
+/* Pinpad Grid */
+.pin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.pin-btn {
+    height: 65px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.1s;
+}
+
+.pin-btn:active {
+    background: #f8f9fa;
+    transform: scale(0.96);
+}
+
+.clear-btn { color: #dc3545; font-size: 12px; }
+.enter-btn { color: #28a745; font-size: 12px; }
+
+/* Animations */
+.animate-in {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* PIN Display Styling */
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease;
+}
+
+/* When a number is pressed, the dot fills in */
+.dot.active {
+    background-color: #333;
+    border-color: #333;
+    transform: scale(1.2);
+}
+
+/* Keep your existing .pin-grid and .pin-btn styles from before */
+.pin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.pin-btn {
+    height: 75px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Column Sizing */
+.qr-column {
+    width: 200px; /* Fixed width for the QR side */
+}
+
+.pin-column {
+    margin-top: -10px; /* Adjust if needed to align with QR top */
+}
+
+/* QR Styling */
+.qr-image {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.qr-footer-text {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* PIN Header and Display */
+.pin-header {
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa; /* Light tray for the dots */
+    border-radius: 10px;
+}
+
+/* Dots */
+.dot {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #333;
+    border-color: #333;
+}
+
+

@@ -38,44 +38,108 @@
             <div class="col-3"></div>
         </div>
         <!-- Card Insertion Message -->
-        <div class="m-3 p-5 box-item" style="min-height: 400px;">
-            <p class="instruction-text display-6">Please insert your credit card, debit card, or shopping card</p>
-            <img src="InsertCard.gif" alt="Insert Card Icon" style="width: 100px; height: auto;">
+
+<div class="m-3 p-5 box-item position-relative" style="min-height: 550px; overflow: hidden; background: white; border-radius: 12px; border: 1px solid #ddd;">
+
+  <!-- Integrated Corner Button -->
+  <button type="button" class="modern-corner-btn" (click)="toggleMode()">
+    <span class="btn-text">{{ isPinMode ? 'CARD MODE' : 'FAST MODE' }}</span>
+  </button>
+
+  <div class="h-100 d-flex align-items-center">
+
+    @if (!isPinMode) {
+      <!-- SCREEN 1: INSERT CARD -->
+      <div class="w-100 text-center">
+        <p class="instruction-text display-6">Please insert your credit card...</p>
+        <img src="InsertCard.gif" style="width: 100px; height: auto;">
+      </div>
+    }
+
+    @else {
+     <!-- SPLIT SCREEN LAYOUT -->
+      <div class="d-flex flex-row align-items-start animate-in pt-4">
+
+        <!-- LEFT COLUMN: QR CODE -->
+        <div class="qr-column d-flex flex-column align-items-center pe-4 border-end">
+          <p class="mb-2 text-muted fw-bold small">Scan to Pay</p>
+          <img src="./paymentqrcode-dfs.png"
+               alt="QR Code"
+               class="qr-image shadow-sm">
+          <p class="qr-footer-text mt-3">Use your mobile app<br>to pay securely</p>
         </div>
+
+        <!-- RIGHT COLUMN: PIN PAD -->
+        <div class="pin-column flex-grow-1 ps-5">
+            <h4 class="text-center mb-3 fw-bold pin-header">ENTER PIN</h4>
+
+            <div class="pin-display mb-4">
+                <span class="dot" [class.active]="pinValue.length >= 1"></span>
+                <span class="dot" [class.active]="pinValue.length >= 2"></span>
+                <span class="dot" [class.active]="pinValue.length >= 3"></span>
+                <span class="dot" [class.active]="pinValue.length >= 4"></span>
+            </div>
+
+            <div class="pin-grid">
+                <button class="pin-btn" (click)="handleInput('1')">1</button>
+                <button class="pin-btn" (click)="handleInput('2')">2</button>
+                <button class="pin-btn" (click)="handleInput('3')">3</button>
+
+                <button class="pin-btn" (click)="handleInput('4')">4</button>
+                <button class="pin-btn" (click)="handleInput('5')">5</button>
+                <button class="pin-btn" (click)="handleInput('6')">6</button>
+
+                <button class="pin-btn" (click)="handleInput('7')">7</button>
+                <button class="pin-btn" (click)="handleInput('8')">8</button>
+                <button class="pin-btn" (click)="handleInput('9')">9</button>
+
+                <button class="pin-btn clear-btn" (click)="clearPin()">CLEAR</button>
+                <button class="pin-btn" (click)="handleInput('0')">0</button>
+                <button class="pin-btn enter-btn">ENTER</button>
+            </div>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>
+
+
+
         <!-- Fuel Options -->
         <div class="row justify-content-center p-2 ">
             <div class="col-3 mb-3 px-2 fuel-option">
                 <div class="card border-primary fuel-option">
                     <img src="prd_unleadedregular.png"/>
-                    <div class="fuel-amount">$2.99</div>
+                    <div class="fuel-amount">$3.83</div>
                     <img class="fuel_octane" src="85.png"/>
                 </div>
             </div>
             <div class="col-3 mb-3 px-2 fuel-option">
                 <div class="card border-primary fuel-option">
                     <img src="prd_midgraderegular.png"/>
-                    <div class="fuel-amount">$2.99</div>
+                    <div class="fuel-amount">$4.23</div>
                     <img class="fuel_octane" src="87.png"/>
                 </div>
             </div>
             <div class="col-3 mb-3 px-2 fuel-option">
                 <div class="card border-primary fuel-option">
                     <img src="prd_premiumregular.png"/>
-                    <div class="fuel-amount">$2.99</div>
+                    <div class="fuel-amount">$4.64</div>
                     <img class="fuel_octane" src="90.png"/>
                 </div>
             </div>
             <div class="col-3 mb-3 px-2 fuel-option">
                 <div class="card border-primary fuel-option">
                     <img src="prd_diesel.png"/>
-                    <div class="fuel-amount">$2.99</div>
+                    <div class="fuel-amount">$5.32</div>
                     <img class="fuel_octane" src="diesel.png"/>
                 </div>
             </div>
         </div>
         <!-- Footer Options -->
         <div class="d-flex justify-content-around align-items-center mt-4">
-            
+
         </div>
     </div>
 
