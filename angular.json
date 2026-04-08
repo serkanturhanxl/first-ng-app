@@ -3,10 +3,10 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "first-ng-app": {
+    "anthem-like-app": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {          
+        "@schematics/angular:component": {
           "style": "scss"
         }
       },
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/first-ng-app",
+            "outputPath": "dist/anthem-like-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "first-ng-app:build:production"
+              "buildTarget": "anthem-like-app:build:production"
             },
             "development": {
-              "buildTarget": "first-ng-app:build:development"
+              "buildTarget": "anthem-like-app:build:development"
             }
           },
           "defaultConfiguration": "development"

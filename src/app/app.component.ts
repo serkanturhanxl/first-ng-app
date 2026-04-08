@@ -12,9 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
     </main>
   `,
   styles: [`
-    
+
     `],
 })
 export class AppComponent {
-  title = 'first-ng-app';
+  title = 'anthem-like-app';
 }
