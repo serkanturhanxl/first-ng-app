@@ -41,68 +41,74 @@
 
 <div class="m-3 p-5 box-item position-relative" style="min-height: 550px; overflow: hidden; background: white; border-radius: 12px; border: 1px solid #ddd;">
 
-  <!-- Integrated Corner Button -->
-  <button type="button" class="modern-corner-btn" (click)="toggleMode()">
-    <span class="btn-text">{{ isPinMode ? 'CARD MODE' : 'FAST MODE' }}</span>
+  <!-- Corner Toggle Button (Changes to CANCEL in Pin/Auth modes) -->
+  <button type="button" class="modern-corner-btn" (click)="toggleMode()"
+    [style.background]="(isPinMode || isAuthorized) ? '#dc3545' : '#007bff'">
+    <span class="btn-text">
+      {{ (isPinMode || isAuthorized) ? 'CANCEL' : 'PIN MODE' }}
+    </span>
   </button>
 
-  <div class="h-100 d-flex align-items-center">
+  <div class="h-100 d-flex align-items-center justify-content-center">
 
-    @if (!isPinMode) {
-      <!-- SCREEN 1: INSERT CARD -->
-      <div class="w-100 text-center">
-        <p class="instruction-text display-6">Please insert your credit card...</p>
-        <img src="InsertCard.gif" style="width: 100px; height: auto;">
+    @if (isAuthorized) {
+      <!-- SCREEN 3: AUTHORIZED -->
+      <div class="text-center animate-in">
+          <div class="success-icon mb-4">✔️</div>
+          <h1 class="display-3 fw-bold text-success">Authorized</h1>
+          <p class="text-muted">Transaction processing...</p>
       </div>
     }
 
-    @else {
-     <!-- SPLIT SCREEN LAYOUT -->
-      <div class="d-flex flex-row align-items-start animate-in pt-4">
-
-        <!-- LEFT COLUMN: QR CODE -->
-        <div class="qr-column d-flex flex-column align-items-center pe-4 border-end">
+    @else if (isPinMode) {
+      <!-- SCREEN 2: SPLIT PIN PAD -->
+      <div class="d-flex flex-row align-items-start animate-in w-100">
+        <!-- LEFT: QR -->
+        <div class="qr-column d-flex flex-column align-items-center pe-4 border-end" style="width: 200px;">
           <p class="mb-2 text-muted fw-bold small">Scan to Pay</p>
-          <img src="./paymentqrcode-dfs.png"
-               alt="QR Code"
-               class="qr-image shadow-sm">
-          <p class="qr-footer-text mt-3">Use your mobile app<br>to pay securely</p>
+          <img src="./paymentqrcode-dfs.png" class="qr-image shadow-sm">
         </div>
 
-        <!-- RIGHT COLUMN: PIN PAD -->
+        <!-- RIGHT: PIN -->
         <div class="pin-column flex-grow-1 ps-5">
-            <h4 class="text-center mb-3 fw-bold pin-header">ENTER PIN</h4>
-
+            <h4 class="text-center mb-3 fw-bold" [class.shake-animation]="shakeLabel">
+                ENTER PIN
+            </h4>
             <div class="pin-display mb-4">
                 <span class="dot" [class.active]="pinValue.length >= 1"></span>
                 <span class="dot" [class.active]="pinValue.length >= 2"></span>
                 <span class="dot" [class.active]="pinValue.length >= 3"></span>
                 <span class="dot" [class.active]="pinValue.length >= 4"></span>
             </div>
-
             <div class="pin-grid">
                 <button class="pin-btn" (click)="handleInput('1')">1</button>
                 <button class="pin-btn" (click)="handleInput('2')">2</button>
                 <button class="pin-btn" (click)="handleInput('3')">3</button>
-
                 <button class="pin-btn" (click)="handleInput('4')">4</button>
                 <button class="pin-btn" (click)="handleInput('5')">5</button>
                 <button class="pin-btn" (click)="handleInput('6')">6</button>
-
                 <button class="pin-btn" (click)="handleInput('7')">7</button>
                 <button class="pin-btn" (click)="handleInput('8')">8</button>
                 <button class="pin-btn" (click)="handleInput('9')">9</button>
-
                 <button class="pin-btn clear-btn" (click)="clearPin()">CLEAR</button>
                 <button class="pin-btn" (click)="handleInput('0')">0</button>
-                <button class="pin-btn enter-btn">ENTER</button>
+                <button class="pin-btn enter-btn" (click)="submitPin()">ENTER</button>
             </div>
         </div>
-
       </div>
     }
+
+    @else {
+      <!-- SCREEN 1: INSERT CARD -->
+      <div class="text-center">
+        <p class="instruction-text display-6">Please insert your card</p>
+        <img src="InsertCard.gif" style="width: 100px;">
+      </div>
+    }
+
   </div>
 </div>
+
 
 
 

@@ -227,4 +227,39 @@
     border-color: #333;
 }
 
+.success-icon {
+    font-size: 80px;
+    background: #d4edda;
+    color: #28a745;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+}
 
+/* Red color for the corner button when in "Cancel" mode */
+.modern-corner-btn[style*="background: rgb(220, 53, 69)"] {
+    background: #dc3545 !important;
+}
+
+/* Shake Animation */
+.shake-animation {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  color: #dc3545; /* Optional: Turn text red during shake */
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Ensure the title has a transition for color returning to normal */
+h4 {
+    transition: color 0.3s ease;
+}
+/* Shake Animation  end*/
