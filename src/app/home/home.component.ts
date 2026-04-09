@@ -30,9 +30,9 @@ export class HomeComponent {
   }
 
   handleInput(val: string) {
-    if (this.pinValue.length < 4) {
+    if (this.pinValue.length < 6) {
       this.pinValue += val;
-      if(this.pinValue.length == 4)
+      if(this.pinValue.length == 6)
       {
           this.submitPin();
       }
@@ -40,7 +40,7 @@ export class HomeComponent {
   }
 
   submitPin() {
-    if (this.pinValue === '1236') {
+    if (this.pinValue === '123459') {
       this.isAuthorized = true;
       this.pulser()?.startPump();
     } else {
